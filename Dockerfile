@@ -23,4 +23,5 @@ RUN apt-get -qqy remove make gcc > /dev/null \
     && rm -rf /var/cache/apt/* /var/cache/debconf/* /var/lib/apt/* /var/lib/dpkg/* /tmp/* /var/tmp/* /var/log/*
 
 # Set start command
-CMD ["/usr/local/bin/udpxy", ${UDPXY_OPTS}]
+#CMD ["/usr/local/bin/udpxy", ${UDPXY_OPTS}]
+ENTRYPOINT ["/usr/local/bin/udpxy", ${UDPXY_OPTS}]
