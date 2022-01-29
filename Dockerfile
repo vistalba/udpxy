@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM debian:bullseye-slim
 MAINTAINER vistalba
 
 # Set ENV
