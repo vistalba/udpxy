@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y wget make gcc
 #RUN wget http://www.udpxy.com/download/udpxy/udpxy-src.tar.gz
 RUN wget https://github.com/pcherenkov/udpxy/archive/refs/tags/1.0-25.1.tar.gz
 #RUN tar -xzvf udpxy-src.tar.gz
-RUN tar -xzvf https://github.com/pcherenkov/udpxy/archive/refs/tags/1.0-25.1.tar.gz
+RUN tar -xzvf 1.0-25.1.tar.gz
 #RUN cd udpxy* && make && make install
 RUN cd udpxy-1.0-25.1/chipmunk/ && make && make install
 
