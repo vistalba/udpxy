@@ -1,6 +1,6 @@
 FROM debian:bookworm-slim AS builder
-MAINTAINER vistalba
-ENV DEBIAN_FRONTEND noninteractive
+LABEL org.opencontainers.image.authors="vistalba"
+ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /tmp
 
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y wget make gcc git && \
 
 
 FROM debian:bookworm-slim
-MAINTAINER vistalba
+LABEL org.opencontainers.image.authors="vistalba"
 COPY --from=builder /usr/local  /usr/local
 
 # Set start command
