@@ -15,6 +15,14 @@ This repository provides a multi‑stage Dockerfile that:
 The resulting container can be used to forward multicast UDP streams (e.g., IPTV) over HTTP, making them accessible to clients that cannot handle UDP directly.  
 
 ---  
+## Tags
+
+| Tag | Description |
+|--------|-------------|
+| `latest` | Image based on `alpine:latest` |
+| `latest-debian` | Image based on `debian:bookworm-slim` |
+
+---
 
 ## Run the Container  
 
@@ -24,7 +32,7 @@ The resulting container can be used to forward multicast UDP streams (e.g., IPTV
 docker run -d \
   --name udpxy \
   -p 4022:4022/tcp \   # default listening port (change if you use a different one)
-  -e UDPXY_OPTS="-p 4022 -U 239.0.0.1:1234" \
+  -e UDPXY_OPTS="-p 4022 -c 30 -T" \
   udpxy:latest
 ```
 ---
