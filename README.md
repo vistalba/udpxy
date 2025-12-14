@@ -1,7 +1,7 @@
 
 # udpxy Docker Image  
 
-**A lightweight Docker image that builds and runs **`udpxy`**, a UDP‑to‑HTTP proxy, on top of Debian bookworm‑slim.**  
+**A lightweight Docker image that builds and runs **`udpxy`**, a UDP‑to‑HTTP proxy, on top of Alpine and Debian bookworm‑slim.**  
 
 ---  
 
@@ -10,7 +10,7 @@
 This repository provides a multi‑stage Dockerfile that:
 
 1. **Compiles** `udpxy` from source (using the `pcherenkov/udpxy` repository).  
-2. **Packages** the resulting binaries into a minimal `debian:bookworm-slim` runtime image.  
+2. **Packages** the resulting binaries into a minimal `alpine:latest` and `debian:bookworm-slim` runtime image.  
 
 The resulting container can be used to forward multicast UDP streams (e.g., IPTV) over HTTP, making them accessible to clients that cannot handle UDP directly.  
 
