@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim AS builder
+FROM debian:trixie-slim AS builder
 LABEL org.opencontainers.image.authors="vistalba"
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y wget make gcc git && \
     cd chipmunk && make && make install
 
 
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 LABEL org.opencontainers.image.authors="vistalba"
 COPY --from=builder /usr/local  /usr/local
 
