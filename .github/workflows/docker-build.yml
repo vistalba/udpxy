@@ -2,7 +2,7 @@ name: Build & Push Docker Images
 
 on:
   push:
-    branches: [main, debian, alpine]
+    branches: [master, debian, alpine]
   workflow_dispatch:
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - branch: main
+          - branch: master
             tag: vistalba/udpxy:latest
           - branch: debian
             tag: vistalba/udpxy:latest-debian
