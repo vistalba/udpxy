@@ -17,7 +17,6 @@ jobs:
             tag: vistalba/udpxy:latest-debian
           - branch: alpine
             tag: vistalba/udpxy:latest-alpine
-    if: github.event_name == 'workflow_dispatch' || github.ref_name == matrix.branch
 
     steps:
       - name: Checkout
