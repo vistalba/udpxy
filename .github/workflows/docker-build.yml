@@ -24,6 +24,10 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
 
+      - name: Get short SHA
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -42,6 +46,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ${{ matrix.tag }}
+          tags: |
+            ${{ matrix.tag }}
+            ${{ matrix.tag }}-${{ steps.vars.outputs.sha_short }}
           cache-from: type=gha,scope=${{ matrix.branch }}
           cache-to: type=gha,scope=${{ matrix.branch }},mode=max
